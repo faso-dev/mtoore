@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use App\Repository\CategoryRepository;
 use App\Service\Botman\FacebookBotmanService;
 use BotMan\BotMan\BotMan;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
@@ -30,15 +32,21 @@ class BotController extends AbstractController
      * @var BotMan
      */
     private $botman;
+    /**
+     * @var CategoryRepository
+     */
+    private $catr;
 
     /**
      * BotController constructor.
      * @param FacebookBotmanService $botmanService
+     * @param CategoryRepository $catr
      */
-    public function __construct(FacebookBotmanService $botmanService)
+    public function __construct(FacebookBotmanService $botmanService, CategoryRepository $catr)
     {
         $this->botmanService = $botmanService;
         $this->botman = $botmanService->create();
+        $this->catr = $catr;
     }
 
     /**
@@ -51,7 +59,7 @@ class BotController extends AbstractController
             'Salut|Coucou|cc|Bonjour|Slt|Bonsoir',
             function (BotMan $bot) {
                 $bot->reply(
-                    $this-> buildConversationButtons()
+                    $this->buildConversationButtons()
                 );
             }
         );
@@ -73,22 +81,19 @@ class BotController extends AbstractController
 
     private function buildConversationButtons()
     {
+
+        $categories = $this->catr->findAll();
+        $btnTemplate = ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée");
+
+        foreach ($categories as $category) {
+            $btnTemplate->addButton(
+                ElementButton::create($category->getTitle())
+                    ->type('postback')
+                    ->payload(strtolower(str_replace(' ', '', $category->getTitle())))
+            );
+        }
+
         return
-            ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée")
-                ->addButton(
-                    ElementButton::create('Face Mask')
-                        ->type('postback')
-                        ->payload('facemask')
-                )
-                ->addButton(
-                    ElementButton::create('Segmentation')
-                        ->type('postback')
-                        ->payload('segmentation')
-                )
-                ->addButton(
-                    ElementButton::create('Makeup')
-                        ->type('postback')
-                        ->payload('makeup')
-                );
+            $btnTemplate;
     }
 }
