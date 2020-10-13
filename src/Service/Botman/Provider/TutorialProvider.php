@@ -33,10 +33,10 @@ class TutorialProvider
     }
 
     /**
-     * @param Category $category
+     * @param Category|int $category
      * @return Tutorial[]
      */
-    public function handle(Category $category)
+    public function handle($category)
     {
         return $this->tutr->findBy([
             'category' => $category

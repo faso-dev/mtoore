@@ -69,15 +69,12 @@ class BotController extends AbstractController
             }
         );
 
-
-        //$categories = $this->catr->findAll();
-        $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) {
-            $bot->reply($choice);
-        });
-        /*foreach ($categories as $category) {
-            $this->botman->hears(strtolower(str_replace(' ', '', $category->getTitle())), function (BotMan $botMan) use ($category, $provider){
+        $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider){
+            /** @var Category $category */
+            $category = $this->catr->find((int)$choice);
+            if (null !== $category){
                 foreach ($provider->handle($category) as $tutorial){
-                    $botMan->reply(OutgoingMessage::create(sprintf("
+                    $bot->reply(OutgoingMessage::create(sprintf("
                     Catégorie du tutoriel : %s \n
                     Titre du tutoriel : %s \n
                     Description du tutoriel : %s \n
@@ -85,8 +82,12 @@ class BotController extends AbstractController
                     Power By ONASS & ARICA STUDIO
                 ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl())));
                 }
-            });
-        }*/
+            }else{
+                $bot->reply(sprintf("Nous n'avons trouvez aucun tutoriel pour cette catégorie"));
+            }
+
+
+        });
 
         $this->botman->listen();
 
