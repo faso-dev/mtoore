@@ -69,7 +69,7 @@ class BotController extends AbstractController
         );
 
         //$categories = $this->catr->findAll();
-        $this->botman->hears('choice_category_{{ category }}', function (BotMan $bot, string $choice) {
+        $this->botman->hears('choice_category_{{ choice }}', function (BotMan $bot, string $choice) {
             $bot->reply($choice);
         });
         /*foreach ($categories as $category) {
