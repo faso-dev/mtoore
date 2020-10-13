@@ -2,6 +2,9 @@
     "botman/botman": {
         "version": "2.6.1"
     },
+    "botman/driver-facebook": {
+        "version": "1.11.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99"
     },
