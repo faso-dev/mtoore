@@ -10,7 +10,77 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="" />
+    <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/brands.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/brands.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/fontawesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/regular.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/regular.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/solid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/solid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/svg-with-js.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/svg-with-js.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/v4-shims.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/v4-shims.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/brands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/brands.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/conflict-detection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/conflict-detection.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/fontawesome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/fontawesome.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/regular.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/regular.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/solid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/solid.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/v4-shims.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/v4-shims.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mtoore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mtoore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TutorialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TutorialController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tutorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tutorial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TutorialType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TutorialType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial/show.html.twig" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +93,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
@@ -117,6 +187,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/vendor/symfony/apache-pack" />
       <path value="$PROJECT_DIR$/vendor/botman/driver-facebook" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ioww737C6RtGmFX88r1CmMPZC9" />
@@ -128,13 +199,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -146,7 +218,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602587488200</updated>
-      <workItem from="1602587489419" duration="7013000" />
+      <workItem from="1602587489419" duration="11379000" />
     </task>
     <servers />
   </component>
@@ -177,9 +249,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="570" y="240" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602589240352" />
-    <state x="347" y="87" key="SettingsEditor" timestamp="1602589250625">
+    <state x="347" y="87" key="SettingsEditor" timestamp="1602600846603">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="347" y="87" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602589250625" />
+    <state x="347" y="87" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1602600846603" />
   </component>
 </project>

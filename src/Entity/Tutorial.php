@@ -10,6 +10,7 @@ namespace App\Entity;
 
 use App\Repository\TutorialRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TutorialRepository::class)
@@ -25,22 +26,29 @@ class Tutorial
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Length(min="2", max="255")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(min="10")
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Url()
      */
     private $url;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="tutorials")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\Valid()
      */
     private $category;
 

@@ -1,39 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tutorial index{% endblock %}
+{% block title %}
+    {{ parent() }} Gestion des tutoriels
+{% endblock %}
 
 {% block body %}
-    <h1>Tutorial index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Url</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tutorial in tutorials %}
-            <tr>
-                <td>{{ tutorial.id }}</td>
-                <td>{{ tutorial.title }}</td>
-                <td>{{ tutorial.description }}</td>
-                <td>{{ tutorial.url }}</td>
-                <td>
-                    <a href="{{ path('tutorial_show', {'id': tutorial.id}) }}">show</a>
-                    <a href="{{ path('tutorial_edit', {'id': tutorial.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('tutorial_new') }}">Create new</a>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h4 class="modal-title p-2 text-center" id="exampleModalLabel">
+                    <i class="fa fa-video"></i> <span class="modal-dynamic-title">
+                        Gestion des des tutoriels
+                    </span></h4>
+            </div>
+            <div class="card-body">
+                <div class="float-right mt-2 mb-3">
+                    <a class="btn btn-dark btn-lg" href="{{ path('tutorial_new') }}">Ajouter</a>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Url</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for tutorial in tutorials %}
+                        <tr>
+                            <td>{{ tutorial.id }}</td>
+                            <td>{{ tutorial.title }}</td>
+                            <td>{{ tutorial.description }}</td>
+                            <td>{{ tutorial.url }}</td>
+                            <td style="width: 130px!important;">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="btn btn-warning"
+                                           href="{{ path('category_edit', {'id': tutorial.id}) }}"><i
+                                                    class="fa fa-edit"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <form method="post"
+                                              action="{{ path('category_delete', {'id': tutorial.id}) }}"
+                                              onsubmit="return confirm('Êtes vous sur de bien vouloir supprimer ?');">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token"
+                                                   value="{{ csrf_token('delete' ~ tutorial.id) }}">
+                                            <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+

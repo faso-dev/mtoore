@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Category{% endblock %}
+{% block title %}
+    {{ parent() }} Création de catégorie
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Category</h1>
-
-    {{ include('category/_form.html.twig') }}
-
-    <a href="{{ path('category_index') }}">back to list</a>
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-dark text-white text-center p-4">
+                <div class="float-left">
+                    <a class="btn btn-dark" href="{{ path('category_index') }}"><i class="fa fa-arrow-left"></i> Retour</a>
+                </div>
+                <h3>Nouvelle catégorie</h3>
+            </div>
+            <div class="card-body">
+                {{ include('category/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
