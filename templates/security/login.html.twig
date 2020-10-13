@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} Login
+{% endblock %}
+
+{% block body %}
+<div class="row align-items-center justify-center">
+    <div class="col-lg-6 offset-3">
+        <form method="post" class="shadow p-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <h1 class="h3 mb-3 font-weight-normal text-center">
+                        MTOORE - AUTHENTIFICATION
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-2">
+                <label for="inputUsername">Username</label>
+                <input type="text" value="{{ last_username }}"
+                       name="username"
+                       id="inputUsername"
+                       class="form-control" required autofocus>
+            </div>
+            <div class="col-lg-12 mb-2">
+                <label for="inputPassword">Password</label>
+                <input type="password"
+                       name="password"
+                       id="inputPassword"
+                       class="form-control" required>
+            </div>
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}"
+            >
+            <div class="col-lg-12">
+                <button class="btn btn-lg btn-primary mt-3" type="submit">
+                    Connexion
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
