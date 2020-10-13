@@ -62,9 +62,10 @@ class BotController extends AbstractController
         $this->botman->hears(
             'Salut|Coucou|cc|Bonjour|Slt|Bonsoir',
             function (BotMan $bot) {
-                $bot->reply(
+                /*$bot->reply(
                     $this->buildConversationButtons()
-                );
+                );*/
+                $bot->reply("hELLO");
             }
         );
 
