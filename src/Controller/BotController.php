@@ -69,9 +69,9 @@ class BotController extends AbstractController
         );
 
         $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider){
-            $bot->reply($choice);
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
+            
             if (null !== $category){
                 $tutorials = $provider->handle($category);
                 if ($tutorials){
