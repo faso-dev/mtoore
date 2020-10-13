@@ -11,7 +11,9 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use App\Service\Botman\FacebookBotmanService;
+use App\Service\Botman\Provider\TutorialProvider;
 use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -51,8 +53,10 @@ class BotController extends AbstractController
 
     /**
      * @Route("/bot", name="bot", methods={"GET", "POST"})
+     * @param TutorialProvider $provider
+     * @return Response
      */
-    public function index()
+    public function index(TutorialProvider $provider)
     {
 
         $this->botman->hears(
@@ -64,15 +68,23 @@ class BotController extends AbstractController
             }
         );
 
-        $this->botman->hears('facemask', function (BotMan $botMan) {
-            $botMan->reply("Vous avez choisi Face Mask");
+        //$categories = $this->catr->findAll();
+        $this->botman->hears('choice_category_{{ category }}', function (BotMan $bot, string $choice) {
+            $bot->reply($choice);
         });
-        $this->botman->hears('segmentation', function (BotMan $botMan) {
-            $botMan->reply("Vous avez choisi Face Segmentation");
-        });
-        $this->botman->hears('makeup', function (BotMan $botMan) {
-            $botMan->reply("Vous avez choisi Face Makeup");
-        });
+        /*foreach ($categories as $category) {
+            $this->botman->hears(strtolower(str_replace(' ', '', $category->getTitle())), function (BotMan $botMan) use ($category, $provider){
+                foreach ($provider->handle($category) as $tutorial){
+                    $botMan->reply(OutgoingMessage::create(sprintf("
+                    Catégorie du tutoriel : %s \n
+                    Titre du tutoriel : %s \n
+                    Description du tutoriel : %s \n
+                    Lien youtube du tutoriel : %s \n\n
+                    Power By ONASS & ARICA STUDIO
+                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl())));
+                }
+            });
+        }*/
 
         $this->botman->listen();
 
@@ -89,7 +101,7 @@ class BotController extends AbstractController
             $btnTemplate->addButton(
                 ElementButton::create($category->getTitle())
                     ->type('postback')
-                    ->payload(strtolower(str_replace(' ', '', $category->getTitle())))
+                    ->payload('choice_category_'.$category->getId())
             );
         }
 
