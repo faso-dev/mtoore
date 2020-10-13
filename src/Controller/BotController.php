@@ -98,7 +98,7 @@ class BotController extends AbstractController
         $btnTemplate = ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée");
 
         foreach ($categories as $category) {
-            $btnTemplate->addButton(
+            $btnTemplate = $btnTemplate->addButton(
                 ElementButton::create($category->getTitle())
                     ->type('postback')
                     ->payload('choice_category_'.$category->getId())
