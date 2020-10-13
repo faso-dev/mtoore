@@ -69,7 +69,7 @@ class BotController extends AbstractController
         );
 
         //$categories = $this->catr->findAll();
-        $this->botman->hears('choice_category_{{ choice }}', function (BotMan $bot, string $choice) {
+        $this->botman->hears('category_{{ choice }}', function (BotMan $bot, string $choice) {
             $bot->reply($choice);
         });
         /*foreach ($categories as $category) {
@@ -95,13 +95,14 @@ class BotController extends AbstractController
     {
 
         $categories = $this->catr->findAll();
+
         $btnTemplate = ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée");
 
         foreach ($categories as $category) {
-            $btnTemplate = $btnTemplate->addButton(
+            $btnTemplate->addButton(
                 ElementButton::create($category->getTitle())
                     ->type('postback')
-                    ->payload('choice_category_'.$category->getId())
+                    ->payload('category_'.$category->getId())
             );
         }
 
