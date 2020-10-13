@@ -65,25 +65,31 @@ class BotController extends AbstractController
                 $bot->reply(
                     $this->buildConversationButtons()
                 );
-                $bot->reply("hELLO");
             }
         );
 
         $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider){
+            $bot->reply($choice);
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
             if (null !== $category){
-                foreach ($provider->handle($category) as $tutorial){
-                    $bot->reply(OutgoingMessage::create(sprintf("
+                $tutorials = $provider->handle($category);
+                if ($tutorials){
+                    foreach ($tutorials as $tutorial){
+                        $bot->reply(OutgoingMessage::create(sprintf("
                     Catégorie du tutoriel : %s \n
                     Titre du tutoriel : %s \n
                     Description du tutoriel : %s \n
                     Lien youtube du tutoriel : %s \n\n
                     Power By ONASS & ARICA STUDIO
                 ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl())));
+                    }
+                }else{
+                    $bot->reply(sprintf("Nous n'avons trouvez aucun tutoriel pour cette catégorie"));
                 }
+
             }else{
-                $bot->reply(sprintf("Nous n'avons trouvez aucun tutoriel pour cette catégorie"));
+                $bot->reply(sprintf("Demande incorrecte (:"));
             }
 
 
@@ -109,7 +115,6 @@ class BotController extends AbstractController
             );
         }
 
-        return
-            $btnTemplate;
+        return $btnTemplate;
     }
 }
