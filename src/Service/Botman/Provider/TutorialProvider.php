@@ -21,25 +21,24 @@ class TutorialProvider
     /**
      * @var TutorialRepository
      */
-    private $tutr;
+    private $tur;
 
     /**
      * TutorialProvider constructor.
-     * @param TutorialRepository $tutr
+     * @param TutorialRepository $tur
      */
-    public function __construct(TutorialRepository $tutr)
-    {
-        $this->tutr = $tutr;
-    }
+    public function __construct(TutorialRepository $tur)
+   {
+       $this->tur = $tur;
+   }
 
     /**
      * @param Category|int $category
-     * @return Tutorial[]
      */
     public function handle($category)
     {
-        return $this->tutr->findBy([
+        return $this->tur->findBy([
             'category' => $category
         ]);
-    }
+   }
 }
