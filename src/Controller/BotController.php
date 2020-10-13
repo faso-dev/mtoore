@@ -81,6 +81,9 @@ class BotController extends AbstractController
                     Power By ONASS & ARICA STUDIO
                 ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl())));
                     }
+                    $bot->reply(
+                        $this->buildConversationButtons()
+                    );
                 }else{
                     $bot->reply(sprintf("Nous n'avons trouvez aucun tutoriel pour cette catégorie"));
                 }
