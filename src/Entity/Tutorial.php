@@ -88,7 +88,7 @@ class Tutorial
 
     public function setUrl(string $url): self
     {
-        $this->url = $url;
+        $this->url = str_replace('youtu.be/','www.youtube.com/embed/', $url);
 
         return $this;
     }
