@@ -134,13 +134,13 @@ class BotController extends AbstractController
      */
     private function welcome()
     {
-        return 'Welcome to Mtoore, we are here to help you understand the concepts that revolve around augmented reality with SPARK AR';
+        return sprintf("Welcome to Mtoore, we are here to help you understand the concepts that revolve around augmented reality with SPARK AR.\nChoose a category in the menu to consult the list of tutorials");
     }
 
     /**
      * @param CategoryRepository $categoryRepository
      * @param FacebookPersistentMenuService $menuService
-     * @Route("/dashboard/persistent/menu", methods={"GET"})
+     * @Route("/dashboard/persistent/menu", name="persist_menu" methods={"GET"})
      * @throws TransportExceptionInterface
      */
     public function setPersistentMenu(CategoryRepository $categoryRepository, FacebookPersistentMenuService $menuService)
