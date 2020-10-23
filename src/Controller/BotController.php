@@ -82,10 +82,7 @@ class BotController extends AbstractController
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
 
-                        $attachment = new Video('https://www.youtube.com/watch?v=IXt77zHffMw', [
-                            'custom_payload' => true
-                        ]);
-                        $message = OutgoingMessage::create(sprintf("
+                       /* $message = OutgoingMessage::create(sprintf("
                                 Category : %s\n
                                 Title : %s\n
                                 Description : %s \n
@@ -93,7 +90,7 @@ class BotController extends AbstractController
                                     $tutorial->getTitle(),
                                     $tutorial->getDescription()));
 
-                        $bot->reply($message);
+                        $bot->reply($message);*/
                         $bot->reply(OpenGraphTemplate::create()
                             ->addElement(OpenGraphElement::create()->url('https://www.youtube.com/watch?v=IXt77zHffMw'))
                         );
