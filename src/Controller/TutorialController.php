@@ -11,7 +11,9 @@ namespace App\Controller;
 use App\Entity\Tutorial;
 use App\Form\TutorialType;
 use App\Repository\TutorialRepository;
+use App\Service\Botman\FacebookBotmanFileUploaderService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,12 +38,18 @@ class TutorialController extends AbstractController
     /**
      * @Route("/new", name="tutorial_new", methods={"GET","POST"})
      * @param Request $request
+     * @param FacebookBotmanFileUploaderService $service
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FacebookBotmanFileUploaderService $service): Response
     {
         $tutorial = new Tutorial();
         $form = $this->createForm(TutorialType::class, $tutorial);
+        $form->add('video', FileType::class, [
+            'mapped' => false,
+            'required' => false
+        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

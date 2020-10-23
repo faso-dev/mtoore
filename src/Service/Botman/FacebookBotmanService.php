@@ -56,4 +56,22 @@ class FacebookBotmanService
         ]);
 
     }
+
+    /**
+     * @return string
+     */
+    public function getFacebookToken(): string
+    {
+        return $this->facebookToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebookVerification(): string
+    {
+        return $this->facebookVerification;
+    }
+
+
 }

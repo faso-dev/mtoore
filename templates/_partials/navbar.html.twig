@@ -29,6 +29,12 @@
                         Tutoriels
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ active_route(['get_started']) }}"
+                       href="{{ path('get_started') }}">
+                        Get started text
+                    </a>
+                </li>
             </ul>
             <ul class="navbar-nav mr-5">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}

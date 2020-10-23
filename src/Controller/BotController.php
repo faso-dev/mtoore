@@ -76,10 +76,9 @@ class BotController extends AbstractController
                 $tutorials = $provider->handle($category);
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
-                        $bot->reply(OutgoingMessage::create(sprintf("
-                    Catégorie du tutoriel : %s\nTitre du tutoriel : %s\nDescription du tutoriel : %s \nLien youtube du tutoriel : %s\n\n
-                    Power By ONASS & ARICA STUDIO
-                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl())));
+                        $bot->reply(sprintf("
+                    Category : %s\nTitle : %s\nDescription : %s \nShow tutoriel : %s\n
+                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl()));
                     }
                     $bot->reply(
                         $this->buildConversationButtons()
