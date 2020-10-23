@@ -18,6 +18,8 @@ use BotMan\BotMan\Messages\Attachments\Video;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
+use BotMan\Drivers\Facebook\Extensions\OpenGraphElement;
+use BotMan\Drivers\Facebook\Extensions\OpenGraphTemplate;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -89,10 +91,12 @@ class BotController extends AbstractController
                                 Description : %s \n
                                 ", $category->getTitle(),
                                     $tutorial->getTitle(),
-                                    $tutorial->getDescription()))
-                            ->withAttachment($attachment);
+                                    $tutorial->getDescription()));
 
                         $bot->reply($message);
+                        $bot->reply(OpenGraphTemplate::create()
+                            ->addElement(OpenGraphElement::create()->url('https://www.youtube.com/watch?v=IXt77zHffMw'))
+                        );
                     }
                 }else{
                     $bot->reply(sprintf("We did not find any tutorials for this category"));
