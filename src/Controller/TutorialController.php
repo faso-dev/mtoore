@@ -66,17 +66,6 @@ class TutorialController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="tutorial_show", methods={"GET"})
-     * @param Tutorial $tutorial
-     * @return Response
-     */
-    public function show(Tutorial $tutorial): Response
-    {
-        return $this->render('tutorial/show.html.twig', [
-            'tutorial' => $tutorial,
-        ]);
-    }
 
     /**
      * @Route("/{id}/edit", name="tutorial_edit", methods={"GET","POST"})

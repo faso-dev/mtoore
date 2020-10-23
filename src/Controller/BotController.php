@@ -13,6 +13,7 @@ use App\Repository\CategoryRepository;
 use App\Service\Botman\FacebookBotmanService;
 use App\Service\Botman\Provider\TutorialProvider;
 use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Messages\Attachments\Video;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
@@ -65,9 +66,6 @@ class BotController extends AbstractController
                 $bot->reply(
                     $this->buildConversationButtons()
                 );
-                $bot->reply(
-                    'https://www.youtube.com/embed/k5JAL8qIzr0'
-                );
             }
         );
 
@@ -79,9 +77,12 @@ class BotController extends AbstractController
                 $tutorials = $provider->handle($category);
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
-                        $bot->reply(sprintf("
+                        $bot->reply(OutgoingMessage::create(sprintf("
                     Category : %s\nTitle : %s\nDescription : %s \nShow tutoriel : %s\n
-                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl()));
+                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl()))
+                        ->withAttachment(new Video($tutorial->getUrl(), [
+                            'custom_payload' => true,
+                        ])));
                     }
                     $bot->reply(
                         $this->buildConversationButtons()
@@ -109,16 +110,14 @@ class BotController extends AbstractController
 
         $btnTemplate = ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée");
 
-        /*foreach ($categories as $category) {
+        foreach ($categories as $category) {
             $btnTemplate->addButton(
                 ElementButton::create($category->getTitle())
                     ->type('postback')
                     ->payload('category_'.$category->getId())
             );
-        }*/
+        }
 
-        return $btnTemplate->addButton(ElementButton::create('Documentation')
-            ->url('https://www.youtube.com/embed/k5JAL8qIzr0')
-        );
+        return $btnTemplate;
     }
 }

@@ -11,8 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Service/Botman/FacebookGetStartedMenuService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/Botman/FacebookPersistentMenuService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TutorialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TutorialController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,13 +142,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Botman" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Service/Botman" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/public/assets" />
@@ -168,7 +173,7 @@
       <workItem from="1603386143588" duration="1976000" />
       <workItem from="1603388148593" duration="1701000" />
       <workItem from="1603452322360" duration="75000" />
-      <workItem from="1603452673675" duration="5479000" />
+      <workItem from="1603452673675" duration="9883000" />
     </task>
     <servers />
   </component>
@@ -188,10 +193,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser" timestamp="1603380543157">
+    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser" timestamp="1603468684593">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603380543157" />
+    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603468684593" />
     <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602594176592">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -200,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="570" y="240" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602589240352" />
-    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog" timestamp="1603383835042">
+    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog" timestamp="1603468246505">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603383835042" />
+    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603468246505" />
     <state x="347" y="87" key="SettingsEditor" timestamp="1603452741743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
