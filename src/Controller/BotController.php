@@ -78,7 +78,9 @@ class BotController extends AbstractController
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
 
-                        $attachment = new Video($tutorial->getUrl());
+                        $attachment = new Video($tutorial->getUrl(), [
+                            'custom_payload' => false
+                        ]);
                         dd('test');
                         $message = OutgoingMessage::create(sprintf("
                                 Category : %s\n
