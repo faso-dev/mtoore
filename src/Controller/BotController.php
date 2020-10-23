@@ -61,10 +61,10 @@ class BotController extends AbstractController
     {
 
         $this->botman->hears(
-            'Salut|Coucou|cc|Bonjour|Slt|Bonsoir',
+            'Salut|Coucou|cc|Bonjour|Slt|Bonsoir|GET_STARTED',
             function (BotMan $bot) {
                 $bot->reply(
-                    $this->buildConversationButtons()
+                    $this->welcome()
                 );
             }
         );
@@ -89,17 +89,15 @@ class BotController extends AbstractController
                                     $tutorial->getTitle(),
                                     $tutorial->getDescription()))
                             ->withAttachment($attachment);
+
                         $bot->reply($message);
                     }
-                    $bot->reply(
-                        $this->buildConversationButtons()
-                    );
                 }else{
-                    $bot->reply(sprintf("Nous n'avons trouvez aucun tutoriel pour cette catégorie"));
+                    $bot->reply(sprintf("We did not find any tutorials for this category"));
                 }
 
             }else{
-                $bot->reply(sprintf("Demande incorrecte (:"));
+                $bot->reply(sprintf("INVALID REQUEST (:"));
             }
 
 
@@ -126,5 +124,14 @@ class BotController extends AbstractController
         }
 
         return $btnTemplate;
+    }
+
+
+    /**
+     * @return string
+     */
+    private function welcome()
+    {
+        return 'Welcome to Mtoore, we are here to help you understand the concepts that revolve around augmented reality with SPARK AR';
     }
 }
