@@ -65,10 +65,8 @@ class FacebookPersistentMenuService
         ]);
         
         if ($response->getStatusCode() === Response::HTTP_OK) {
-            dd($response->toArray());
             return true;
         }
-        dd($response->toArray());
         return false;
     }
 }

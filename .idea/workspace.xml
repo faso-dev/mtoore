@@ -10,10 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
-    </list>
+    <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,7 +166,7 @@
       <workItem from="1603386143588" duration="1976000" />
       <workItem from="1603388148593" duration="1701000" />
       <workItem from="1603452322360" duration="75000" />
-      <workItem from="1603452673675" duration="11732000" />
+      <workItem from="1603452673675" duration="12063000" />
     </task>
     <servers />
   </component>
