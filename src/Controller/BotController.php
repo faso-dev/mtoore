@@ -89,8 +89,6 @@ class BotController extends AbstractController
                                     $tutorial->getTitle(),
                                     $tutorial->getDescription()))
                             ->withAttachment($attachment);
-
-                        dd('test');
                         $bot->reply($message);
                     }
                     $bot->reply(
