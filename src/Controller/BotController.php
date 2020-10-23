@@ -77,12 +77,18 @@ class BotController extends AbstractController
                 $tutorials = $provider->handle($category);
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
-                        $bot->reply(OutgoingMessage::create(sprintf("
-                    Category : %s\nTitle : %s\nDescription : %s \nShow tutoriel : %s\n
-                ", $category->getTitle(), $tutorial->getTitle(), $tutorial->getDescription(), $tutorial->getUrl()))
-                        ->withAttachment(new Video($tutorial->getUrl(), [
-                            'custom_payload' => true,
-                        ])));
+
+                        $attachment = new Video($tutorial->getUrl());
+                        $message = OutgoingMessage::create(sprintf("
+                                Category : %s\n
+                                Title : %s\n
+                                Description : %s \n
+                                ", $category->getTitle(),
+                                    $tutorial->getTitle(),
+                                    $tutorial->getDescription()))
+                            ->withAttachment($attachment);
+
+                        $bot->reply($message);
                     }
                     $bot->reply(
                         $this->buildConversationButtons()
