@@ -81,7 +81,6 @@ class BotController extends AbstractController
                         $attachment = new Video($tutorial->getUrl(), [
                             'custom_payload' => false
                         ]);
-                        dd('test');
                         $message = OutgoingMessage::create(sprintf("
                                 Category : %s\n
                                 Title : %s\n
@@ -91,6 +90,7 @@ class BotController extends AbstractController
                                     $tutorial->getDescription()))
                             ->withAttachment($attachment);
 
+                        dd('test');
                         $bot->reply($message);
                     }
                     $bot->reply(
