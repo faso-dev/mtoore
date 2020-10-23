@@ -38,17 +38,12 @@ class TutorialController extends AbstractController
     /**
      * @Route("/new", name="tutorial_new", methods={"GET","POST"})
      * @param Request $request
-     * @param FacebookBotmanFileUploaderService $service
      * @return Response
      */
-    public function new(Request $request, FacebookBotmanFileUploaderService $service): Response
+    public function new(Request $request): Response
     {
         $tutorial = new Tutorial();
         $form = $this->createForm(TutorialType::class, $tutorial);
-        $form->add('video', FileType::class, [
-            'mapped' => false,
-            'required' => false
-        ]);
 
         $form->handleRequest($request);
 
