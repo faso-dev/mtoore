@@ -11,20 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/test.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Botman/FacebookBotmanFileUploaderService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/get_started/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/get_started/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mtoore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mtoore.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TutorialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TutorialController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Botman/FacebookBotmanService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/FacebookBotmanService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +168,7 @@
       <workItem from="1603386143588" duration="1976000" />
       <workItem from="1603388148593" duration="1701000" />
       <workItem from="1603452322360" duration="75000" />
-      <workItem from="1603452673675" duration="3697000" />
+      <workItem from="1603452673675" duration="5479000" />
     </task>
     <servers />
   </component>

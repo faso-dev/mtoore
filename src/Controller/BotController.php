@@ -114,6 +114,8 @@ class BotController extends AbstractController
             );
         }
 
-        return $btnTemplate;
+        return $btnTemplate->addButton(ElementButton::create('Documentation')
+            ->url('https://www.youtube.com/embed/k5JAL8qIzr0')
+        );
     }
 }
