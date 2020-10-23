@@ -11,6 +11,7 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
 use App\Service\Botman\FacebookBotmanService;
+use App\Service\Botman\FacebookPersistentMenuService;
 use App\Service\Botman\Provider\TutorialProvider;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Video;
@@ -20,6 +21,7 @@ use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 /**
  * Class BotController
@@ -133,5 +135,23 @@ class BotController extends AbstractController
     private function welcome()
     {
         return 'Welcome to Mtoore, we are here to help you understand the concepts that revolve around augmented reality with SPARK AR';
+    }
+
+    /**
+     * @param CategoryRepository $categoryRepository
+     * @param FacebookPersistentMenuService $menuService
+     * @Route("/dashboard/persistent/menu", methods={"GET"})
+     * @throws TransportExceptionInterface
+     */
+    public function setPersistentMenu(CategoryRepository $categoryRepository, FacebookPersistentMenuService $menuService)
+    {
+        $response = $menuService->persistentMenu($categoryRepository->findAll());
+        if ($response) {
+            $this->addFlash('success', 'Vous avez mis à jour le menu des tutoriels');
+        }else{
+            $this->addFlash('error', 'Une erreur est survenue lors de la mise à jour');
+        }
+
+        return $this->redirectToRoute('dashboard');
     }
 }
