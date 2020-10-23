@@ -38,12 +38,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <a class="btn btn-warning"
-                                           href="{{ path('category_edit', {'id': tutorial.id}) }}"><i
+                                           href="{{ path('tutorial_edit', {'id': tutorial.id}) }}"><i
                                                     class="fa fa-edit"></i></a>
                                     </div>
                                     <div class="col">
                                         <form method="post"
-                                              action="{{ path('category_delete', {'id': tutorial.id}) }}"
+                                              action="{{ path('tutorial_delete', {'id': tutorial.id}) }}"
                                               onsubmit="return confirm('Êtes vous sur de bien vouloir supprimer ?');">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token"
