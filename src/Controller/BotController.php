@@ -140,7 +140,7 @@ class BotController extends AbstractController
     /**
      * @param CategoryRepository $categoryRepository
      * @param FacebookPersistentMenuService $menuService
-     * @Route("/dashboard/persistent/menu", name="persist_menu" methods={"GET"})
+     * @Route("/dashboard/persistent/menu", name="persist_menu", methods={"GET"})
      * @throws TransportExceptionInterface
      */
     public function setPersistentMenu(CategoryRepository $categoryRepository, FacebookPersistentMenuService $menuService)
