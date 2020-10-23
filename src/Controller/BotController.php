@@ -78,7 +78,7 @@ class BotController extends AbstractController
                 if ($tutorials){
                     foreach ($tutorials as $tutorial){
 
-                        $attachment = new Video($tutorial->getUrl(), [
+                        $attachment = new Video('https://covid-info226.herokuapp.com/assets/ressources/infocovid.mp4', [
                             'custom_payload' => false
                         ]);
                         $message = OutgoingMessage::create(sprintf("
