@@ -58,7 +58,7 @@ class TutorialBotService
             $elements[] = Element::create($tutorial->getTitle())
                 ->subtitle($tutorial->getDescription())
                 ->image($tutorial->getThumbnail())
-                ->addButton(ElementButton::create('Play on youtube')
+                ->addButton(ElementButton::create('Play')
                     ->url($tutorial->getUrl())
                 );
         }
