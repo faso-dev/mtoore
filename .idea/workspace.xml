@@ -11,10 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tutorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tutorial.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +172,7 @@
       <workItem from="1603452322360" duration="75000" />
       <workItem from="1603452673675" duration="14232000" />
       <workItem from="1603533792140" duration="599000" />
-      <workItem from="1603705542332" duration="4128000" />
+      <workItem from="1603705542332" duration="4960000" />
     </task>
     <servers />
   </component>
@@ -197,18 +196,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603468684593" />
-    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603474832615">
+    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603710329141">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603474832615" />
+    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603710329141" />
     <state x="570" y="240" key="FileChooserDialogImpl" timestamp="1602589240352">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="570" y="240" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602589240352" />
-    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog" timestamp="1603468246505">
+    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog" timestamp="1603710290460">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603468246505" />
+    <state x="322" y="176" width="1266" height="723" key="NewPhpClassDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603710290460" />
     <state x="347" y="87" key="SettingsEditor" timestamp="1603452741743">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -13,6 +13,7 @@ use App\Repository\CategoryRepository;
 use App\Service\Botman\FacebookBotmanService;
 use App\Service\Botman\FacebookPersistentMenuService;
 use App\Service\Botman\Provider\TutorialProvider;
+use App\Service\Botman\TutorialBotService;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Video;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
@@ -67,7 +68,7 @@ class BotController extends AbstractController
     {
 
         $this->botman->hears(
-            'Salut|Coucou|cc|Bonjour|Slt|Bonsoir|GET_STARTED',
+            'Hello|Hi|GET_STARTED',
             function (BotMan $bot) {
                 $bot->reply(
                     $this->welcome()
@@ -81,66 +82,18 @@ class BotController extends AbstractController
 
             if (null !== $category) {
                 $tutorials = $provider->handle($category);
-                if ($tutorials) {
-                    $elements = [];
-                    foreach ($tutorials as $tutorial) {
-                        $elements[] = Element::create($tutorial->getTitle())
-                            ->subtitle($tutorial->getDescription())
-                            ->image($tutorial->getThumbnail())
-                            ->addButton(ElementButton::create('Play on youtube')
-                                ->url($tutorial->getUrl())
-                            );
-
-                        /* $message = OutgoingMessage::create(sprintf("
-                                 Category : %s\n
-                                 Title : %s\n
-                                 Description : %s \n
-                                 ", $category->getTitle(),
-                                     $tutorial->getTitle(),
-                                     $tutorial->getDescription()));
-
-                         $bot->reply($message);*/
-
-                    }
-                    $bot->reply(
-                        GenericTemplate::create()
-                            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
-                            ->addElements($elements)
-                    );
-                } else {
-                    $bot->reply(sprintf("We did not find any tutorials for this category"));
-                }
-
-            } else {
-                $bot->reply(sprintf("INVALID REQUEST (:"));
-            }
-
-
+                if ($tutorials)
+                    TutorialBotService::replyWithData($bot, $tutorials);
+                else
+                    TutorialBotService::replyWhenNoDataFound($bot);
+            } else
+                TutorialBotService::replyWhenInvalidRequestSend($bot);
         });
 
         $this->botman->listen();
 
         return new Response();
     }
-
-    private function buildConversationButtons()
-    {
-
-        $categories = $this->catr->findAll();
-
-        $btnTemplate = ButtonTemplate::create("Bienvenue sur MTOORE, vote bot pour apprendre la réalité augmentée");
-
-        foreach ($categories as $category) {
-            $btnTemplate->addButton(
-                ElementButton::create($category->getTitle())
-                    ->type('postback')
-                    ->payload('category_' . $category->getId())
-            );
-        }
-
-        return $btnTemplate;
-    }
-
 
     /**
      * @return string

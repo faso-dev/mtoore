@@ -1,0 +1,61 @@
+<?php
+/*
+ * Copyright (c) 2020. | All Rights Reserved
+ * Ce code source est la propriété de <faso-dev> http://faso-dev.com
+ * Ce code source ne saurait être reproduit sans une autorisation expresse de <faso-dev>
+ * @Author <faso-dev> jeromeonadja28@gmail.com
+ */
+
+namespace App\Service\Botman;
+
+
+use App\Entity\Tutorial;
+use BotMan\BotMan\BotMan;
+use BotMan\Drivers\Facebook\Extensions\Element;
+use BotMan\Drivers\Facebook\Extensions\ElementButton;
+use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
+
+/**
+ * Class TutorialBotService
+ * @package App\Service\Botman
+ */
+class TutorialBotService
+{
+    /**
+     * @param BotMan $bot
+     * @param Tutorial[] $tutorials
+     */
+    public static function replyWithData(BotMan $bot, array $tutorials)
+    {
+        $elements = [];
+        foreach ($tutorials as $tutorial) {
+            $elements[] = Element::create($tutorial->getTitle())
+                ->subtitle($tutorial->getDescription())
+                ->image($tutorial->getThumbnail())
+                ->addButton(ElementButton::create('Play on youtube')
+                    ->url($tutorial->getUrl())
+                );
+        }
+        $bot->reply(
+            GenericTemplate::create()
+                ->addImageAspectRatio(GenericTemplate::RATIO_HORIZONTAL)
+                ->addElements($elements)
+        );
+    }
+
+    /**
+     * @param BotMan $bot
+     */
+    public static function replyWhenNoDataFound(BotMan $bot)
+    {
+        $bot->reply('We did not find any tutorials for this category');
+    }
+
+    /**
+     * @param BotMan $bot
+     */
+    public static function replyWhenInvalidRequestSend(BotMan $bot)
+    {
+        $bot->reply("I'm not sure I understand what you are asking me, please use the menu below. 😉️😉️😉️");
+    }
+}
