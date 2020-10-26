@@ -17,7 +17,9 @@ use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Messages\Attachments\Video;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
+use BotMan\Drivers\Facebook\Extensions\Element;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
+use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
 use BotMan\Drivers\Facebook\Extensions\OpenGraphElement;
 use BotMan\Drivers\Facebook\Extensions\OpenGraphTemplate;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -73,36 +75,43 @@ class BotController extends AbstractController
             }
         );
 
-        $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider){
+        $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider) {
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
 
-            if (null !== $category){
+            if (null !== $category) {
                 $tutorials = $provider->handle($category);
-                if ($tutorials){
-                    foreach ($tutorials as $tutorial){
+                if ($tutorials) {
+                    $elements = [];
+                    foreach ($tutorials as $tutorial) {
+                        $elements[] = Element::create($tutorial->getTitle())
+                            ->subtitle($tutorial->getDescription())
+                            ->image($tutorial->getThumbnail())
+                            ->addButton(ElementButton::create('Play on youtube')
+                                ->url($tutorial->getUrl())
+                            );
 
-                       /* $message = OutgoingMessage::create(sprintf("
-                                Category : %s\n
-                                Title : %s\n
-                                Description : %s \n
-                                ", $category->getTitle(),
-                                    $tutorial->getTitle(),
-                                    $tutorial->getDescription()));
+                        /* $message = OutgoingMessage::create(sprintf("
+                                 Category : %s\n
+                                 Title : %s\n
+                                 Description : %s \n
+                                 ", $category->getTitle(),
+                                     $tutorial->getTitle(),
+                                     $tutorial->getDescription()));
 
-                        $bot->reply($message);*/
-                        $bot->reply(
-                            OpenGraphTemplate::create()
-                                ->addElements([
-                                    OpenGraphElement::create()->url($tutorial->getUrl())
-                                ])
-                        );
+                         $bot->reply($message);*/
+
                     }
-                }else{
+                    $bot->reply(
+                        GenericTemplate::create()
+                            ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)
+                            ->addElements($elements)
+                    );
+                } else {
                     $bot->reply(sprintf("We did not find any tutorials for this category"));
                 }
 
-            }else{
+            } else {
                 $bot->reply(sprintf("INVALID REQUEST (:"));
             }
 
@@ -125,7 +134,7 @@ class BotController extends AbstractController
             $btnTemplate->addButton(
                 ElementButton::create($category->getTitle())
                     ->type('postback')
-                    ->payload('category_'.$category->getId())
+                    ->payload('category_' . $category->getId())
             );
         }
 
@@ -152,7 +161,7 @@ class BotController extends AbstractController
         $response = $menuService->persistentMenu($categoryRepository->findAll());
         if ($response) {
             $this->addFlash('success', 'Vous avez mis à jour le menu des tutoriels');
-        }else{
+        } else {
             $this->addFlash('error', 'Une erreur est survenue lors de la mise à jour');
         }
 

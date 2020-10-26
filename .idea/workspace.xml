@@ -13,18 +13,8 @@
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/get_started/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/get_started/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/get_started/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/get_started/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Tutorial.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tutorial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +173,7 @@
       <workItem from="1603452322360" duration="75000" />
       <workItem from="1603452673675" duration="14232000" />
       <workItem from="1603533792140" duration="599000" />
-      <workItem from="1603705542332" duration="1476000" />
+      <workItem from="1603705542332" duration="3665000" />
     </task>
     <servers />
   </component>

@@ -52,6 +52,11 @@ class Tutorial
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $thumbnail;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -101,6 +106,18 @@ class Tutorial
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?string $thumbnail): self
+    {
+        $this->thumbnail = str_replace('youtu.be/','i3.ytimg.com/vi/', $thumbnail).'/hqdefault.jpg';
 
         return $this;
     }

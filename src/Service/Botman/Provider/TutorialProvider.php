@@ -40,6 +40,6 @@ class TutorialProvider
     {
         return $this->tur->findBy([
             'category' => $category
-        ]);
+        ], [], 10);
    }
 }
