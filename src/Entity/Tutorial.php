@@ -94,7 +94,7 @@ class Tutorial
     public function setUrl(string $url): self
     {
         $this->url = str_replace('youtu.be/','www.youtube.com/embed/', $url);
-
+        $this->setThumbnail($url);
         return $this;
     }
 
