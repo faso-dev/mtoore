@@ -62,6 +62,7 @@ class BotController extends AbstractController
         $this->botman->hears(
             'Hello|Hi|GET_STARTED',
             function (BotMan $bot) {
+                $bot->typesAndWaits(2);
                 $bot->reply(
                     $this->welcome()
                 );
@@ -69,18 +70,22 @@ class BotController extends AbstractController
         );
 
         $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider) {
+            $bot->typesAndWaits(2);
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
             TutorialBotService::handle($provider, $bot, $category);
         });
 
         $this->botman->hears('pagination_{choice}_{page}', function (BotMan $bot, string $choice, string $page) use($provider) {
+            $bot->typesAndWaits(2);
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
             $page = (int)$page;
             TutorialBotService::handle($provider, $bot, $category, $page);
 
         });
+        TutorialBotService::notUnderstandUserRequest($this->botman);
+
         $this->botman->listen();
         return new Response();
     }
