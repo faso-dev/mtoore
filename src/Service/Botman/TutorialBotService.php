@@ -110,6 +110,8 @@ class TutorialBotService
                 ->type('postback')
                 ->payload('pagination_'.$item->getId().'_'.$prev));
         }
-        $bot->reply($btnTemplate);
+        if ($next || $prev) {
+            $bot->reply($btnTemplate);
+        }
     }
 }
