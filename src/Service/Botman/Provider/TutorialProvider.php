@@ -11,6 +11,7 @@ namespace App\Service\Botman\Provider;
 use App\Entity\Category;
 use App\Entity\Tutorial;
 use App\Repository\TutorialRepository;
+use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
  * Class TutorialProvider
@@ -34,12 +35,11 @@ class TutorialProvider
 
     /**
      * @param Category|int $category
-     * @return Tutorial[]|null
+     * @param int|null $page
+     * @return PaginationInterface
      */
-    public function handle($category): ?array
+    public function handle($category, ?int $page = 1): PaginationInterface
     {
-        return $this->tur->findBy([
-            'category' => $category
-        ], [], 10);
+        return $this->tur->paginate($category, $page);
    }
 }

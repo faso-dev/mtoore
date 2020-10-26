@@ -8,9 +8,12 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Tutorial;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @method Tutorial|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,8 +23,35 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TutorialRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var int
+     */
+    const TAKE_ITEMS = 10;
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Tutorial::class);
+        $this->paginator = $paginator;
+    }
+
+    /**
+     * @param Category $category
+     * @param int|null $page
+     * @return PaginationInterface
+     */
+    public function paginate(Category $category, ?int $page = 1): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->createQueryBuilder('t')
+                ->andWhere('t.category = :category')
+                ->setParameter('category', $category)
+                ->getQuery(),
+            $page,
+            self::TAKE_ITEMS
+        );
     }
 }

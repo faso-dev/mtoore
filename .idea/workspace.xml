@@ -11,9 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mtoore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mtoore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/Provider/TutorialProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/navbar.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +43,6 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/vendor/mpociot/pipeline" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/reflection" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
@@ -128,6 +136,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ioww737C6RtGmFX88r1CmMPZC9" />
@@ -172,7 +183,7 @@
       <workItem from="1603452322360" duration="75000" />
       <workItem from="1603452673675" duration="14232000" />
       <workItem from="1603533792140" duration="599000" />
-      <workItem from="1603705542332" duration="4960000" />
+      <workItem from="1603705542332" duration="8619000" />
     </task>
     <servers />
   </component>
@@ -192,14 +203,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser" timestamp="1603468684593">
+    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser" timestamp="1603712091837">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603468684593" />
-    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603710329141">
+    <state x="721" y="191" width="627" height="689" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1603712091837" />
+    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603711967766">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603710329141" />
+    <state x="627" y="241" width="655" height="594" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1603711967766" />
     <state x="570" y="240" key="FileChooserDialogImpl" timestamp="1602589240352">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

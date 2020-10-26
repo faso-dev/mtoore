@@ -79,15 +79,15 @@ class BotController extends AbstractController
         $this->botman->hears('category_{choice}', function (BotMan $bot, string $choice) use ($provider) {
             /** @var Category $category */
             $category = $this->catr->find((int)$choice);
+            TutorialBotService::handle($provider, $bot, $category);
+        });
 
-            if (null !== $category) {
-                $tutorials = $provider->handle($category);
-                if ($tutorials)
-                    TutorialBotService::replyWithData($bot, $tutorials);
-                else
-                    TutorialBotService::replyWhenNoDataFound($bot);
-            } else
-                TutorialBotService::replyWhenInvalidRequestSend($bot);
+        $this->botman->hears('pagination_{choice}_{page}', function (BotMan $bot, string $choice, string $page) use($provider) {
+            /** @var Category $category */
+            $category = $this->catr->find((int)$choice);
+            $page = (int)$page;
+            TutorialBotService::handle($provider, $bot, $category, $page);
+
         });
 
         $this->botman->listen();

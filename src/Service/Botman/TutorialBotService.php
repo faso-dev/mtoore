@@ -9,11 +9,15 @@
 namespace App\Service\Botman;
 
 
+use App\Entity\Category;
 use App\Entity\Tutorial;
+use App\Service\Botman\Provider\TutorialProvider;
 use BotMan\BotMan\BotMan;
+use BotMan\Drivers\Facebook\Extensions\ButtonTemplate;
 use BotMan\Drivers\Facebook\Extensions\Element;
 use BotMan\Drivers\Facebook\Extensions\ElementButton;
 use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
+use Knp\Component\Pager\Pagination\PaginationInterface;
 
 /**
  * Class TutorialBotService
@@ -21,6 +25,23 @@ use BotMan\Drivers\Facebook\Extensions\GenericTemplate;
  */
 class TutorialBotService
 {
+
+    public static function handle(TutorialProvider $provider, BotMan $bot, ?Category $category = null, ?int $page = 1)
+    {
+        if (null !== $category) {
+            $paginationTutorials = $provider->handle($category, $page);
+            if ($paginationTutorials->getTotalItemCount()){
+                /** @var Tutorial[] $tutorials */
+                $tutorials = $paginationTutorials->getItems();
+                TutorialBotService::replyWithData($bot, $tutorials);
+                TutorialBotService::sendPagination($bot, $paginationTutorials, $category);
+            }
+            else
+                TutorialBotService::replyWhenNoDataFound($bot);
+        } else
+            TutorialBotService::replyWhenInvalidRequestSend($bot);
+    }
+
     /**
      * @param BotMan $bot
      * @param Tutorial[] $tutorials
@@ -57,5 +78,28 @@ class TutorialBotService
     public static function replyWhenInvalidRequestSend(BotMan $bot)
     {
         $bot->reply("I'm not sure I understand what you are asking me, please use the menu below. 😉️😉️😉️");
+    }
+
+    private static function sendPagination(BotMan $bot, PaginationInterface $paginationTutorials, Category $item)
+    {
+        $curentPage = $paginationTutorials->getCurrentPageNumber();
+        $itemsPerPage = $paginationTutorials->getItemNumberPerPage();
+        $max = ceil($paginationTutorials->getTotalItemCount() / $itemsPerPage);
+        $next = $max >= ($curentPage + 1) ? $curentPage + 1 : false;
+        $prev = ($curentPage - 1) < 1 ? false : $curentPage - 1;
+        $btnTemplate = ButtonTemplate::create('Pagination');
+        if ($next) {
+            $btnTemplate
+                ->addButton(ElementButton::create('Suivant')
+                ->type('postback')
+                ->payload('pagination_'.$item->getId().'_'.$next));
+        }
+        if ($prev) {
+            $btnTemplate
+                ->addButton(ElementButton::create('Précedant')
+                ->type('postback')
+                ->payload('pagination_'.$item->getId().'_'.$prev));
+        }
+        $bot->reply($btnTemplate);
     }
 }
