@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "composer-runtime-api": "^2.0",
         "botman/botman": "^2.6",
         "botman/driver-facebook": "^1.11",
         "composer/package-versions-deprecated": "^1.11",
