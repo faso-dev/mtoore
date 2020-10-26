@@ -11,8 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BotController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BotController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TutorialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TutorialController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,11 +147,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Service/Botman" />
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/public/assets" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -173,7 +173,7 @@
       <workItem from="1603452322360" duration="75000" />
       <workItem from="1603452673675" duration="14232000" />
       <workItem from="1603533792140" duration="599000" />
-      <workItem from="1603705542332" duration="13683000" />
+      <workItem from="1603705542332" duration="14109000" />
     </task>
     <servers />
   </component>
