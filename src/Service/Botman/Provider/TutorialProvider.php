@@ -9,7 +9,6 @@
 namespace App\Service\Botman\Provider;
 
 use App\Entity\Category;
-use App\Entity\Tutorial;
 use App\Repository\TutorialRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 
