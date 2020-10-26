@@ -26,7 +26,7 @@ class TutorialRepository extends ServiceEntityRepository
     /**
      * @var int
      */
-    const TAKE_ITEMS = 10;
+    const TAKE_ITEMS = 1;
     /**
      * @var PaginatorInterface
      */
