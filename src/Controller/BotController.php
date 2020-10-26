@@ -84,6 +84,7 @@ class BotController extends AbstractController
             TutorialBotService::handle($provider, $bot, $category, $page);
 
         });
+
         TutorialBotService::notUnderstandUserRequest($this->botman);
 
         $this->botman->listen();

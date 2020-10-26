@@ -121,6 +121,7 @@ class TutorialBotService
     public static function notUnderstandUserRequest(BotMan $bot)
     {
         $bot->fallback(function(BotMan $bot) {
+            $bot->typesAndWaits(2);
             $bot->reply('Sorry, I did not understand this request. Please try one of category from menu 😉️😉️😉️.');
         });
     }
