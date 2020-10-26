@@ -93,7 +93,6 @@ class BotController extends AbstractController
                         $bot->reply($message);*/
                         $bot->reply(
                             OpenGraphTemplate::create()
-                                ->addElement(OpenGraphElement::create()->url('https://www.youtube.com/watch?v=IXt77zHffMw'))
                                 ->addElements([
                                     OpenGraphElement::create()->url($tutorial->getUrl())
                                 ])
