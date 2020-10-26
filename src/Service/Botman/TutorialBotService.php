@@ -100,13 +100,13 @@ class TutorialBotService
         $btnTemplate = ButtonTemplate::create('Pagination');
         if ($next) {
             $btnTemplate
-                ->addButton(ElementButton::create('Suivant')
+                ->addButton(ElementButton::create('Next')
                 ->type('postback')
                 ->payload('pagination_'.$item->getId().'_'.$next));
         }
         if ($prev) {
             $btnTemplate
-                ->addButton(ElementButton::create('Précedant')
+                ->addButton(ElementButton::create('Previous')
                 ->type('postback')
                 ->payload('pagination_'.$item->getId().'_'.$prev));
         }

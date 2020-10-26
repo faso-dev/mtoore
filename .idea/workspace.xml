@@ -11,6 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6036fea7-3bc8-406a-8df7-1c3169b29252" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TutorialRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Botman/TutorialBotService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +140,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Service/Botman" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -172,7 +173,7 @@
       <workItem from="1603452322360" duration="75000" />
       <workItem from="1603452673675" duration="14232000" />
       <workItem from="1603533792140" duration="599000" />
-      <workItem from="1603705542332" duration="12737000" />
+      <workItem from="1603705542332" duration="13683000" />
     </task>
     <servers />
   </component>
