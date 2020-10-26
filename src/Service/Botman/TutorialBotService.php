@@ -25,7 +25,12 @@ use Knp\Component\Pager\Pagination\PaginationInterface;
  */
 class TutorialBotService
 {
-
+    /**
+     * @param TutorialProvider $provider
+     * @param BotMan $bot
+     * @param Category|null $category
+     * @param int|null $page
+     */
     public static function handle(TutorialProvider $provider, BotMan $bot, ?Category $category = null, ?int $page = 1)
     {
         if (null !== $category) {
@@ -80,6 +85,11 @@ class TutorialBotService
         $bot->reply("I'm not sure I understand what you are asking me, please use the menu below. 😉️😉️😉️");
     }
 
+    /**
+     * @param BotMan $bot
+     * @param PaginationInterface $paginationTutorials
+     * @param Category $item
+     */
     private static function sendPagination(BotMan $bot, PaginationInterface $paginationTutorials, Category $item)
     {
         $curentPage = $paginationTutorials->getCurrentPageNumber();

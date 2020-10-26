@@ -89,9 +89,7 @@ class BotController extends AbstractController
             TutorialBotService::handle($provider, $bot, $category, $page);
 
         });
-
         $this->botman->listen();
-
         return new Response();
     }
 
