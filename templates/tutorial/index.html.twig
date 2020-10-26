@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }} Gestion des tutoriels
+    {{ parent() }} Tutorials management
 {% endblock %}
 
 {% block body %}
@@ -10,12 +10,12 @@
             <div class="card-header bg-dark text-white">
                 <h4 class="modal-title p-2 text-center" id="exampleModalLabel">
                     <i class="fa fa-video"></i> <span class="modal-dynamic-title">
-                        Gestion des des tutoriels
+                        Tutorials management
                     </span></h4>
             </div>
             <div class="card-body">
                 <div class="float-right mt-2 mb-3">
-                    <a class="btn btn-dark btn-lg" href="{{ path('tutorial_new') }}">Ajouter</a>
+                    <a class="btn btn-dark btn-lg" href="{{ path('tutorial_new') }}">Add</a>
                 </div>
                 <table class="table">
                     <thead>
@@ -44,7 +44,7 @@
                                     <div class="col">
                                         <form method="post"
                                               action="{{ path('tutorial_delete', {'id': tutorial.id}) }}"
-                                              onsubmit="return confirm('Êtes vous sur de bien vouloir supprimer ?');">
+                                              onsubmit="return confirm('Are you sure to do this ?');">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token"
                                                    value="{{ csrf_token('delete' ~ tutorial.id) }}">

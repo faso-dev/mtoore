@@ -9,24 +9,28 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <h1>Tutoriles</h1>
+                    <h1>Tutorials</h1>
                 </div>
                 <div class="card-body">
-                    <h1 style="font-weight: 900; font-size: 60px; letter-spacing: 1px; text-align: center">
-                        {{ tutoriels }}
-                    </h1>
+                    <a href="{{ path('tutorial_index') }}">
+                        <h1 style="font-weight: 900; font-size: 60px; letter-spacing: 1px; text-align: center">
+                            {{ tutoriels }}
+                        </h1>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header">
-                    <h1>Catégories</h1>
+                    <h1>Categories</h1>
                 </div>
                 <div class="card-body">
-                   <h1 style="font-weight: 900; font-size: 60px; letter-spacing: 1px; text-align: center">
-                       {{ categories }}
-                   </h1>
+                    <a href="{{ path('category_index') }}">
+                        <h1 style="font-weight: 900; font-size: 60px; letter-spacing: 1px; text-align: center">
+                            {{ categories }}
+                        </h1>
+                    </a>
                 </div>
             </div>
         </div>

@@ -9,7 +9,6 @@
 namespace App\Service\Botman;
 
 
-use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
@@ -37,7 +36,7 @@ class FacebookGetStartedMenuService
     }
 
     /**
-     * @param Category[] $items
+     * @return bool
      * @throws TransportExceptionInterface
      */
     public function getStarted()

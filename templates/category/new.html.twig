@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }} Création de catégorie
+    {{ parent() }} Category creation
 {% endblock %}
 
 {% block body %}
@@ -9,9 +9,9 @@
         <div class="card">
             <div class="card-header bg-dark text-white text-center p-4">
                 <div class="float-left">
-                    <a class="btn btn-dark" href="{{ path('category_index') }}"><i class="fa fa-arrow-left"></i> Retour</a>
+                    <a class="btn btn-dark" href="{{ path('category_index') }}"><i class="fa fa-arrow-left"></i> Back</a>
                 </div>
-                <h3>Nouvelle catégorie</h3>
+                <h3>New category</h3>
             </div>
             <div class="card-body">
                 {{ include('category/_form.html.twig') }}

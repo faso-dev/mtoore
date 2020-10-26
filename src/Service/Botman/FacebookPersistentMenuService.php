@@ -38,6 +38,7 @@ class FacebookPersistentMenuService
 
     /**
      * @param Category[] $items
+     * @return bool
      * @throws TransportExceptionInterface
      */
     public function persistentMenu(array $items)
