@@ -48,7 +48,7 @@ class GetStartedController extends AbstractController
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function index(HttpClientInterface $http, Request $request, GetStartedRepository $getStartedRepository, EntityManagerInterface $manager)
+    public function index(HttpClientInterface $http, Request $request, GetStartedRepository $getStartedRepository, EntityManagerInterface $manager): Response
     {
         $getstarted = $getStartedRepository->findAll();
 

@@ -41,7 +41,7 @@ class FacebookPersistentMenuService
      * @return bool
      * @throws TransportExceptionInterface
      */
-    public function persistentMenu(array $items)
+    public function persistentMenu(array $items): bool
     {
 
         $call_actions = [];
@@ -64,7 +64,7 @@ class FacebookPersistentMenuService
                 ]
             ]
         ]);
-        
+
         if ($response->getStatusCode() === Response::HTTP_OK) {
             return true;
         }

@@ -66,6 +66,7 @@ class TutorialBotService
             GenericTemplate::create()
                 ->addImageAspectRatio(GenericTemplate::RATIO_HORIZONTAL)
                 ->addElements($elements)
+
         );
     }
 

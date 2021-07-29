@@ -39,7 +39,7 @@ class FacebookGetStartedMenuService
      * @return bool
      * @throws TransportExceptionInterface
      */
-    public function getStarted()
+    public function getStarted(): bool
     {
 
         $response = $this->http->request(Request::METHOD_POST, $this->entrypoint, [

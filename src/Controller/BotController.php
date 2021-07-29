@@ -16,6 +16,7 @@ use App\Service\Botman\Provider\TutorialProvider;
 use App\Service\Botman\TutorialBotService;
 use BotMan\BotMan\BotMan;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
@@ -94,7 +95,7 @@ class BotController extends AbstractController
     /**
      * @return string
      */
-    private function welcome()
+    private function welcome(): string
     {
         return sprintf("Welcome to Mtoore, we are here to help you understand the concepts that revolve around augmented reality with SPARK AR.\nChoose a category in the menu to consult the list of tutorials");
     }
@@ -102,10 +103,11 @@ class BotController extends AbstractController
     /**
      * @param CategoryRepository $categoryRepository
      * @param FacebookPersistentMenuService $menuService
-     * @Route("/dashboard/persistent/menu", name="persist_menu", methods={"GET"})
+     * @return RedirectResponse
      * @throws TransportExceptionInterface
+     * @Route("/dashboard/persistent/menu", name="persist_menu", methods={"GET"})
      */
-    public function setPersistentMenu(CategoryRepository $categoryRepository, FacebookPersistentMenuService $menuService)
+    public function setPersistentMenu(CategoryRepository $categoryRepository, FacebookPersistentMenuService $menuService): RedirectResponse
     {
         $response = $menuService->persistentMenu($categoryRepository->findAll());
         if ($response) {
